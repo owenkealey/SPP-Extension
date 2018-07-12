@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "Comfortaa";
+    src: url("https://fonts.googleapis.com/css?family=Comfortaa");
+}
+* {
+    font-family: "Comfortaa";  
+}
+html, body{
+    background-image: url("../img/prep3.jpg")
+}
+.time{
+    font-weight: 500;
+    margin-top: 30%;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+.welcome{
+    margin-top: 20%;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+.left{
+    margin-top: 20%;
+    margin-left: 25%;
+}
+.icon{
+    margin-right: 25%;
+}
