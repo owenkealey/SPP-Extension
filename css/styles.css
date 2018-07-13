@@ -9,8 +9,7 @@ html, body{
     background-image: url("../img/background.png");
 }
 a{
-    float:left;
-    margin: 15px;
+    margin: 10px;
 }
 .time{
     font-size: 1000%;
@@ -34,4 +33,10 @@ a{
     margin-right: auto;
     height: 15%;
     width: 15%;
+}
+.gst{
+    position: absolute;
+    height: 50px;
+    top: 0px;
+    right: 0px;
 }

@@ -1,19 +1,16 @@
 {
     "manifest_version": 2,
     "name": "SPP New Tab Extension",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "chrome_url_overrides" : {
         "newtab": "newtab.html"
     },
-    "default_locale": "en",
     "description": "Overrides the newtab page to better suit SPP Students.",
     "browser_action": {
         "default_icon": "icon.png"
     },
-    "background": {
-        "scripts": ["js/background.js"],
-        "persistent": false
-    },
-    "permissions": ["identity", "identity.email"]
-
+    "permissions": ["identity", "identity.email", "https://script.google.com/macros/s/AKfycbxAS9LZunbUUhVYlQmGVk3UgIud9-YEJnvm6lYJNPALUcCJ4ME/exec"],
+    "icons": {
+    "128": "icon.png"
+    }
 }
