@@ -1,28 +1,37 @@
 @font-face {
-    font-family: "Comfortaa";
-    src: url("https://fonts.googleapis.com/css?family=Comfortaa");
+    font-family: "cooper";
+    src: url("../fonts/cooper.woff");
 }
 * {
-    font-family: "Comfortaa";  
+    font-family: "cooper";  
 }
 html, body{
-    background-image: url("../img/prep3.jpg")
+    background-image: url("../img/background.png");
+}
+a{
+    float:left;
+    margin: 15px;
 }
 .time{
-    font-weight: 500;
-    margin-top: 30%;
-    margin-left: 50%;
-    margin-right: 50%;
+    font-size: 1000%;
+    text-align: center;
+    color: #ffffff;
 }
 .welcome{
-    margin-top: 20%;
-    margin-left: 50%;
-    margin-right: 50%;
-}
-.left{
-    margin-top: 20%;
-    margin-left: 25%;
+    font-size: 500%;
+    margin: 25px;
+    text-align: center;
+    color: #ffffff;
 }
 .icon{
-    margin-right: 25%;
+    height: 75px;
+    width: 75px;
+    position:relative;
+}
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 15%;
+    width: 15%;
 }
