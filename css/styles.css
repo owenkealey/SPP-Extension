@@ -40,3 +40,9 @@ a{
     top: 0px;
     right: 0px;
 }
+.refresh{
+    position: absolute;
+    height: 50px;
+    top: 0px;
+    left: 0px;
+}
