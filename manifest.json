@@ -9,7 +9,7 @@
     "browser_action": {
         "default_icon": "icon.png"
     },
-    "permissions": ["identity", "identity.email", "https://script.google.com/a/students.spprep.org/macros/s/AKfycbxNGcRrqrdfzV2x8s_7aI5dPlVBHLTt6KfmaVE64xFxgyt3LLv_/exec"],
+    "permissions": ["identity", "identity.email", "https://script.google.com/macros/s/AKfycbxNGcRrqrdfzV2x8s_7aI5dPlVBHLTt6KfmaVE64xFxgyt3LLv_/exec"],
     "icons": {
     "128": "icon.png"
     }

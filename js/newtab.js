@@ -1,48 +1,15 @@
 // Copyright 2018 Grand Street Technologies. All Rights Reserved.
-function setInfo(data){
-    localStorage.setItem("studentInfo", data);
-}
 
 
-function setStudentInfo(){
-    var appUrl = "https://script.google.com/a/students.spprep.org/macros/s/AKfycbxNGcRrqrdfzV2x8s_7aI5dPlVBHLTt6KfmaVE64xFxgyt3LLv_/exec";
-    chrome.identity.getProfileUserInfo(function(info) { 
-        email = info.email; 
-        $.ajax({
-            type: "POST",
-            url: appUrl, 
-            data: email, 
-            success: setInfo});})
-        
-}
-
-
-function completeRender(){
-    var studentInfo = localStorage.getItem("studentInfo");
-    var nameElement = document.getElementById("name");
-    studentInfo = JSON.parse(studentInfo);
+function completeStudentRender(){
+    var studentInfo = JSON.parse(localStorage.getItem("studentInfo"));
     var name = studentInfo["name"];
-    var nameElement = document.getElementById("name");
     var powerSchoolElement = document.getElementById("powerschool");
     var scheduleElement = document.getElementById("schedule");
     var announcementsElement = document.getElementById("announcements");
+    var nameElement = document.getElementById("name");
     var d = new Date();
     var h = d.getHours();
-    if(h < 12){
-        nameElement.innerHTML = "Good morning, " + name;
-    }
-    else if(h < 17){
-        nameElement.innerHTML = "Good afternoon, " + name;
-    }
-    else{
-        nameElement.innerHTML = "Good evening, " + name;
-    }
-    if(studentInfo["email"].includes("students")){
-        powerSchoolElement.setAttribute("href", "http://powerschool.spprep.org");
-    }
-    else{
-        powerSchoolElement.setAttribute("href", "https://spprep.powerschool.com/teachers/pw.html");
-    }
     var year = d.getFullYear();
     var month = d.getMonth() + 1;
     var day = d.getDate();
@@ -52,24 +19,97 @@ function completeRender(){
     else if(day < 10){
         day = "0" + day;
     }
+    if(h < 12){
+        nameElement.innerHTML = "Good morning, " + name;
+    }
+    else if(h < 17){
+        nameElement.innerHTML = "Good afternoon, " + name;
+    }
+    else{
+        nameElement.innerHTML = "Good evening, " + name;
+    }
     var formattedDate = year + "-" + month + "-" + day;
-    scheduleElement.setAttribute("href", "http://intranet.spprep.org/images/pdf/Student_Schedules/Current_Student_Schedules/" + studentInfo["id"] + ".pdf");
     announcementsElement.setAttribute("href", "http://intranet.spprep.org/calendar/announcements/" + formattedDate + ".html");
+    powerSchoolElement.setAttribute("href", "http://powerschool.spprep.org");
+    scheduleElement.setAttribute("href", "http://intranet.spprep.org/images/pdf/Student_Schedules/Current_Student_Schedules/" + studentInfo["id"] + ".pdf");
 }
 
 
-function renderInfo(){
+function renderTeacherInfo(){
+    var powerSchoolElement = document.getElementById("powerschool");
+    var scheduleElement = document.getElementById("schedule");
+    var announcementsElement = document.getElementById("announcements");
+    var nameElement = document.getElementById("name");
+    var d = new Date();
+    var h = d.getHours();
+    var year = d.getFullYear();
+    var month = d.getMonth() + 1;
+    var day = d.getDate();
+    if(month < 10){
+        month = "0" + month;
+    }
+    else if(day < 10){
+        day = "0" + day;
+    }
+    if(h < 12){
+        nameElement.innerHTML = "Good morning";
+    }
+    else if(h < 17){
+        nameElement.innerHTML = "Good afternoon";
+    }
+    else{
+        nameElement.innerHTML = "Good evening";
+    }
+    var formattedDate = year + "-" + month + "-" + day;
+    announcementsElement.setAttribute("href", "http://intranet.spprep.org/calendar/announcements/" + formattedDate + ".html");
+    powerSchoolElement.setAttribute("href", "https://spprep.powerschool.com/teachers/pw.html");
+    scheduleElement.style = "display:none;";
+}
+
+
+function setStudentInfo(email){
+    var appUrl = "https://script.google.com/macros/s/AKfycbxNGcRrqrdfzV2x8s_7aI5dPlVBHLTt6KfmaVE64xFxgyt3LLv_/exec";
+    $.ajax({
+        type: "POST",
+        url: appUrl, 
+        data: email, 
+        success: function(data){
+                    if(data == "ERROR"){
+                        var qualifiedData = {"email":email, "name":"", "id":""}
+                        localStorage.setItem("studentInfo", qualifiedData)
+                    }
+                    else{
+                        localStorage.setItem("studentInfo", data);
+                    }
+        }});
+}
+
+
+function renderStudentInfo(email){
     var studentInfo = localStorage.getItem("studentInfo");
     if(studentInfo == null){
-        setStudentInfo();
+        setStudentInfo(email);
         $(document).ajaxStop(function () {
-            completeRender();
+            completeStudentRender();
         });
     }
     else{
-        completeRender();
+        completeStudentRender();
     }
 }
+
+
+
+function renderInfo(){
+    chrome.identity.getProfileUserInfo(function(info) { 
+        email = info.email; 
+        if(email.includes("students")){
+            renderStudentInfo(email);
+        }
+        else{
+            renderTeacherInfo();
+        }
+})}
 
 
 function refresh(){
@@ -97,8 +137,11 @@ function time() {
     if(h < 10){
         h = "0" + h;
     }
-    if(h <= 12){
+    if(h < 12){
         s = s + " am";
+    }
+    else if(h == 12){
+        s = s + " pm";
     }
     else{
         h = h - 12;
