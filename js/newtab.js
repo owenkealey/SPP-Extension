@@ -153,6 +153,6 @@ function time() {
 
 
 time();
+setInterval(time, 1000);
 renderInfo();
 handleRefresh();
-setInterval(time, 1000);
