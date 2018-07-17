@@ -5,7 +5,7 @@ function setInfo(data){
 
 
 function setStudentInfo(){
-    var appUrl = "https://script.google.com/macros/s/AKfycbxAS9LZunbUUhVYlQmGVk3UgIud9-YEJnvm6lYJNPALUcCJ4ME/exec";
+    var appUrl = "https://script.google.com/a/students.spprep.org/macros/s/AKfycbxNGcRrqrdfzV2x8s_7aI5dPlVBHLTt6KfmaVE64xFxgyt3LLv_/exec";
     chrome.identity.getProfileUserInfo(function(info) { 
         email = info.email; 
         $.ajax({
@@ -19,6 +19,7 @@ function setStudentInfo(){
 
 function completeRender(){
     var studentInfo = localStorage.getItem("studentInfo");
+    var nameElement = document.getElementById("name");
     studentInfo = JSON.parse(studentInfo);
     var name = studentInfo["name"];
     var nameElement = document.getElementById("name");
