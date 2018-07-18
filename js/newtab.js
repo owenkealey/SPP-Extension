@@ -143,6 +143,10 @@ function time() {
     else if(h == 12){
         s = s + " pm";
     }
+    else if(h ==24){
+        h = 12;
+        s = s+ " am"
+    }
     else{
         h = h - 12;
         s = s + " pm";
