@@ -31,7 +31,7 @@ function completeStudentRender(){
     var formattedDate = year + "-" + month + "-" + day;
     announcementsElement.setAttribute("href", "http://intranet.spprep.org/calendar/announcements/" + formattedDate + ".html");
     powerSchoolElement.setAttribute("href", "http://powerschool.spprep.org");
-    scheduleElement.setAttribute("href", "http://intranet.spprep.org/images/pdf/Student_Schedules/Current_Student_Schedules/" + studentInfo["pdf"] + ".pdf");
+    scheduleElement.setAttribute("href", "http://intranet.spprep.org/images/pdf/Student_Schedules/Current_Student_Schedules/" + studentInfo["pdf"]);
 }
 
 
