@@ -31,7 +31,7 @@ function completeStudentRender(){
     var formattedDate = year + "-" + month + "-" + day;
     announcementsElement.setAttribute("href", "http://intranet.spprep.org/calendar/announcements/" + formattedDate + ".html");
     powerSchoolElement.setAttribute("href", "http://powerschool.spprep.org");
-    scheduleElement.setAttribute("href", "http://intranet.spprep.org/images/pdf/Student_Schedules/Current_Student_Schedules/" + studentInfo["id"] + ".pdf");
+    scheduleElement.setAttribute("href", "http://intranet.spprep.org/images/pdf/Student_Schedules/Current_Student_Schedules/" + studentInfo["pdf"] + ".pdf");
 }
 
 
@@ -68,14 +68,14 @@ function renderTeacherInfo(){
 
 
 function setStudentInfo(email){
-    var appUrl = "https://script.google.com/macros/s/AKfycbxNGcRrqrdfzV2x8s_7aI5dPlVBHLTt6KfmaVE64xFxgyt3LLv_/exec";
+    var appUrl = "https://script.google.com/macros/s/AKfycbxAS9LZunbUUhVYlQmGVk3UgIud9-YEJnvm6lYJNPALUcCJ4ME/exec";
     $.ajax({
         type: "POST",
         url: appUrl, 
         data: email, 
         success: function(data){
                     if(data == "ERROR"){
-                        var qualifiedData = {"email":email, "name":"", "id":""}
+                        var qualifiedData = {"email":email, "name":"", "id":"", "pdf":""}
                         localStorage.setItem("studentInfo", qualifiedData)
                     }
                     else{
