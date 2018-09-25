@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "SPP New Tab Extension",
-    "version": "0.0.7",
+    "version": "0.0.9",
     "chrome_url_overrides" : {
         "newtab": "newtab.html"
     },
@@ -9,7 +9,7 @@
     "browser_action": {
         "default_icon": "icon.png"
     },
-    "permissions": ["identity", "identity.email", "https://script.google.com/macros/s/AKfycbxNGcRrqrdfzV2x8s_7aI5dPlVBHLTt6KfmaVE64xFxgyt3LLv_/exec"],
+    "permissions": ["identity", "identity.email", "https://script.google.com/macros/s/AKfycbxAS9LZunbUUhVYlQmGVk3UgIud9-YEJnvm6lYJNPALUcCJ4ME/exec"],
     "icons": {
     "128": "icon.png"
     }
