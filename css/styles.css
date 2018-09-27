@@ -36,12 +36,12 @@ a{
 .gst{
     position: absolute;
     height: 50px;
-    top: 5px;
-    right: 5px;
+    top: 8px;
+    right: 8px;
 }
 .refresh{
     position: absolute;
     height: 50px;
-    top: 5px;
-    left: 5px;
+    top: 8px;
+    left: 8px;
 }
