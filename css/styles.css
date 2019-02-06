@@ -23,8 +23,14 @@ a{
     color: #ffffff;
 }
 .icon{
-    height: 75px;
-    position:relative;
+    height: 65px;
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+img.icon:hover{
+    transform: scale(1.1);
 }
 .logo{
     display: block;
@@ -35,7 +41,7 @@ a{
 }
 .gst{
     position: absolute;
-    height: 50px;
+    height: 40px;
     top: 8px;
     right: 8px;
 }
@@ -44,4 +50,5 @@ a{
     height: 50px;
     top: 8px;
     left: 8px;
+    cursor: pointer;
 }

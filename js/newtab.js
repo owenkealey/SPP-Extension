@@ -6,7 +6,6 @@ function completeStudentRender(){
     var name = studentInfo["name"];
     var powerSchoolElement = document.getElementById("powerschool");
     var scheduleElement = document.getElementById("schedule");
-    var announcementsElement = document.getElementById("announcements");
     var nameElement = document.getElementById("name");
     var d = new Date();
     var h = d.getHours();
@@ -20,16 +19,15 @@ function completeStudentRender(){
         day = "0" + day;
     }
     if(h < 12){
-        nameElement.innerHTML = "Good morning, " + name;
+        nameElement.innerHTML = "Good morning, " + name + "!";
     }
     else if(h < 17){
-        nameElement.innerHTML = "Good afternoon, " + name;
+        nameElement.innerHTML = "Good afternoon, " + name+ "!";
     }
     else{
-        nameElement.innerHTML = "Good evening, " + name;
+        nameElement.innerHTML = "Good evening, " + name+ "!";
     }
     var formattedDate = year + "-" + month + "-" + day - 1;
-    announcementsElement.setAttribute("href", "http://intranet.spprep.org/calendar/announcements/" + formattedDate + ".html");
     powerSchoolElement.setAttribute("href", "http://powerschool.spprep.org");
     scheduleElement.setAttribute("href", "http://intranet.spprep.org/images/pdf/Student_Schedules/Current_Student_Schedules/" + studentInfo["pdf"]);
 }
@@ -38,7 +36,6 @@ function completeStudentRender(){
 function renderTeacherInfo(){
     var powerSchoolElement = document.getElementById("powerschool");
     var scheduleElement = document.getElementById("schedule");
-    var announcementsElement = document.getElementById("announcements");
     var nameElement = document.getElementById("name");
     var d = new Date();
     var h = d.getHours();
@@ -52,16 +49,15 @@ function renderTeacherInfo(){
         day = "0" + day;
     }
     if(h < 12){
-        nameElement.innerHTML = "Good morning";
+        nameElement.innerHTML = "Good morning!";
     }
     else if(h < 17){
-        nameElement.innerHTML = "Good afternoon";
+        nameElement.innerHTML = "Good afternoon!";
     }
     else{
-        nameElement.innerHTML = "Good evening";
+        nameElement.innerHTML = "Good evening!";
     }
     var formattedDate = year + "-" + month + "-" + day;
-    announcementsElement.setAttribute("href", "http://intranet.spprep.org/calendar/announcements/" + formattedDate + ".html");
     powerSchoolElement.setAttribute("href", "https://spprep.powerschool.com/teachers/pw.html");
     scheduleElement.style = "display:none;";
 }
