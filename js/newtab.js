@@ -35,6 +35,7 @@ function completeStudentRender(){
 
 function renderTeacherInfo(){
     var powerSchoolElement = document.getElementById("powerschool");
+    var powerSubElement = document.getElementById("power_sub");
     var scheduleElement = document.getElementById("schedule");
     var nameElement = document.getElementById("name");
     var d = new Date();
@@ -57,9 +58,10 @@ function renderTeacherInfo(){
     else{
         nameElement.innerHTML = "Good evening!";
     }
-    var formattedDate = year + "-" + month + "-" + day;
+    powerSubElement.setAttribute("href", "https://spprep.powerschool.com/subs/pw.html");
     powerSchoolElement.setAttribute("href", "https://spprep.powerschool.com/teachers/pw.html");
     scheduleElement.style = "display:none;";
+    powerSubElement.style = "display:visible;";
 }
 
 

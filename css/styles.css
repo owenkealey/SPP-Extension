@@ -23,14 +23,11 @@ a{
     color: #ffffff;
 }
 .icon{
-    height: 65px;
+    height: 45px;
     position: relative;
     background: white;
     border-radius: 10px;
     padding: 20px;
-}
-img.icon:hover{
-    transform: scale(1.1);
 }
 .logo{
     display: block;
