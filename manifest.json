@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "SPP New Tab Extension",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "chrome_url_overrides" : {
         "newtab": "newtab.html"
     },
