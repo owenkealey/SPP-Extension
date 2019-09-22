@@ -1,4 +1,4 @@
-// Copyright 2018 Grand Street Technologies. All Rights Reserved.
+// Copyright 2018 Phantom Labs. All Rights Reserved.
 
 
 function completeStudentRender(){
@@ -27,7 +27,6 @@ function completeStudentRender(){
     else{
         nameElement.innerHTML = "Good evening, " + name+ "!";
     }
-    var formattedDate = year + "-" + month + "-" + day - 1;
     powerSchoolElement.setAttribute("href", "http://powerschool.spprep.org");
     scheduleElement.setAttribute("href", "http://intranet.spprep.org/images/pdf/Student_Schedules/Current_Student_Schedules/" + studentInfo["pdf"]);
 }

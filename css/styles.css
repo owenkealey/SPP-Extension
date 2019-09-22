@@ -6,13 +6,13 @@
     font-family: "cooper";  
 }
 html, body{
-    background-image: url("../img/background.png");
+    background-color: #97012e;
 }
 a{
     margin: 10px;
 }
 .time{
-    font-size: 700%;
+    font-size: 600%;
     text-align: center;
     color: #ffffff;
 }
@@ -26,8 +26,9 @@ a{
     height: 45px;
     position: relative;
     background: white;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 20px;
+    box-shadow: 2px 2px 12px black;
 }
 .logo{
     display: block;
@@ -38,8 +39,8 @@ a{
 }
 .gst{
     position: absolute;
-    height: 40px;
-    top: 8px;
+    height: 70px;
+    bottom: 8px;
     right: 8px;
 }
 .refresh{
