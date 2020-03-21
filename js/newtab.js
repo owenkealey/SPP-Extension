@@ -38,7 +38,6 @@ function renderTeacherInfo(){
     var nameElement = document.getElementById("name");
     var d = new Date();
     var h = d.getHours();
-    var year = d.getFullYear();
     var month = d.getMonth() + 1;
     var day = d.getDate();
     if(month < 10){
@@ -69,14 +68,15 @@ function setStudentInfo(email){
         url: appUrl, 
         data: email, 
         success: function(data){
-                    if(data == "ERROR"){
-                        var qualifiedData = {"email":email, "name":"", "id":"", "pdf":""}
-                        localStorage.setItem("studentInfo", qualifiedData)
-                    }
-                    else{
-                        localStorage.setItem("studentInfo", data);
-                    }
-        }});
+            if(data == "ERROR"){
+                var qualifiedData = {"email":email, "name":"", "id":"", "pdf":""}
+                localStorage.setItem("studentInfo", qualifiedData)
+            }
+            else{
+                localStorage.setItem("studentInfo", data);
+            }
+        }
+    });
 }
 
 
@@ -104,7 +104,12 @@ function renderInfo(){
         else{
             renderTeacherInfo();
         }
-})}
+    });
+    var today = new Date();
+    if(today.getMonth() == 10 && today.getDay() == 31){
+        document.getElementById("butrym").style.display = "auto";
+    }
+}
 
 
 function refresh(){
@@ -145,6 +150,10 @@ function time() {
     else{
         h = h - 12;
         s = s + " pm";
+    }
+
+    if(h == 00){
+        h = 12;
     }
     var div = document.getElementById('time');
     div.textContent = h + ":" + m + ":" + s;

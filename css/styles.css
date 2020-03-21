@@ -3,10 +3,10 @@
     src: url("../fonts/cooper.woff");
 }
 * {
-    font-family: "cooper";  
+    font-family: "cooper";
 }
 html, body{
-    background-color: #aa0230;
+    background-color: #a9012e;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -35,18 +35,10 @@ a{
     color: #ffffff;
 }
 .welcome{
-    font-size: 500%;
+    font-size: 400%;
     margin: 25px;
     text-align: center;
     color: #ffffff;
-}
-.icon{
-    height: 45px;
-    position: relative;
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 2px 2px 12px black;
 }
 .logo{
     display: block;
@@ -54,8 +46,7 @@ a{
     margin-right: auto;
     margin-bottom: 30px;
     margin-top: 20px;
-    height: 17%;
-    width: 17%;
+    width: 120px;
 }
 .gst{
     position: absolute;
@@ -65,8 +56,38 @@ a{
 }
 .refresh{
     position: absolute;
-    height: 50px;
-    top: 8px;
-    left: 8px;
+    height: 30px;
+    top: 15px;
+    left: 15px;
     cursor: pointer;
+    filter: brightness(0) invert(1);
+}
+
+.grid_container{
+    display: grid;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-row-gap: 20px;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+}
+
+.grid_item{
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 2px 2px 12px black;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.icon{
+    width: 80px;
+    margin: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
 }
